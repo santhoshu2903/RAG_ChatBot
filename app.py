@@ -10,8 +10,6 @@ st.title("Llama Index test")
 query = st.text_input("Ask any question about the data", "")
 
 documents = SimpleDirectoryReader("data").load_data()
-index = VectorStoreIndex.from_documents(documents)
-
 llm = OpenAI(model="gpt-3.5-turbo", temperature=0, max_tokens=256)
 service_context = ServiceContext.from_defaults(llm=llm, chunk_size=800, chunk_overlap=20)
 index = VectorStoreIndex.from_documents(documents, service_context=service_context)
