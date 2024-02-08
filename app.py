@@ -6,7 +6,7 @@ from llama_index import ServiceContext, set_global_service_context
 import os, streamlit as st
 
 
-os.environ['OPENAI_API_KEY']="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"
+os.environ['OPENAI_API_KEY']="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"
 st.title("Llama Index test")
 query = st.text_input("Ask any question about the data", "")
 
