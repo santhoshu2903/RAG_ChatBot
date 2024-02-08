@@ -1,11 +1,11 @@
 import os
 from llama_index.llms import OpenAI
 from llama_index import VectorStoreIndex, SimpleDirectoryReader
-from llama_index import StorageContext, load_index_from_storage
-from llama_index import ServiceContext, set_global_service_context
+from llama_index import ServiceContext
 import os, streamlit as st
 
 
+os.environ['OPENAI_API_KEY']="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"
 st.title("Llama Index test")
 query = st.text_input("Ask any question about the data", "")
 
