@@ -5,11 +5,13 @@ from llama_index import ServiceContext
 import os, streamlit as st
 
 api_key=os.getenv('OPENAI_API_KEY')
+# api_key=os.environ['OPENAI_API_KEY']
+print(api_key)
 st.title("Llama Index test")
 query = st.text_input("Ask any question about the data", "")
 
 documents = SimpleDirectoryReader("data").load_data()
-llm = OpenAI(openai_api_key="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",model="gpt-3.5-turbo", temperature=0, max_tokens=256)
+llm = OpenAI(openai_api_key=api_key,model="gpt-3.5-turbo", temperature=0, max_tokens=256)
 service_context = ServiceContext.from_defaults(llm=llm, chunk_size=800, chunk_overlap=20)
 index = VectorStoreIndex.from_documents(documents, service_context=service_context)
 
