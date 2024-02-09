@@ -4,8 +4,8 @@ from llama_index import VectorStoreIndex, SimpleDirectoryReader
 from llama_index import ServiceContext
 import os, streamlit as st
 
-api_key=os.getenv('OPENAI_API_KEY')
-# api_key=os.environ['OPENAI_API_KEY']
+# api_key=os.getenv('OPENAI_API_KEY')
+api_key=os.environ['OPENAI_API_KEY']
 print(api_key)
 st.title("Llama Index test")
 query = st.text_input("Ask any question about the data", "")
