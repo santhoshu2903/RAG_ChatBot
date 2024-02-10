@@ -7,7 +7,7 @@ import os, streamlit as st
 api_key=os.getenv('OPENAI_API_KEY')
 # api_key=os.environ['OPENAI_API_KEY']
 print(api_key)
-st.title("Llama Index test")
+st.title("LlamaIndex test")
 query = st.text_input("Ask any question about the data", "")
 
 documents = SimpleDirectoryReader("data").load_data()
